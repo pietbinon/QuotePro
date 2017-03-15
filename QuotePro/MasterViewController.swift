@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MasterViewController.swift
 //  QuotePro
 //
 //  Created by Callum Davies on 2017-03-15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MasterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
