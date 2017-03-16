@@ -10,9 +10,9 @@ import UIKit
 
 class QuoteViewCell: UITableViewCell {
     
-    @IBOutlet weak var quoteImageView: UIImageView!
-    @IBOutlet weak var quoteLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet fileprivate weak var quoteImageView: UIImageView!
+    @IBOutlet fileprivate weak var quoteLabel: UILabel!
+    @IBOutlet fileprivate weak var authorLabel: UILabel!
     
     var completedQuote: CompletedQuote! {
         didSet {
@@ -23,7 +23,7 @@ class QuoteViewCell: UITableViewCell {
     fileprivate func configure() {
         
         self.quoteImageView.image = completedQuote.photo.photo
-        self.quoteLabel.text = completedQuote.quote.quoteText
-        self.authorLabel.text = completedQuote.quote.quoteAuthor
+        self.quoteLabel.text = String(format: "%@", completedQuote.quote.quoteText!)
+        self.authorLabel.text = String(format: "-%@",completedQuote.quote.quoteAuthor!)
     }
 }

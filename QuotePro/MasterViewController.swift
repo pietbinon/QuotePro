@@ -18,19 +18,12 @@ class MasterViewController: UIViewController, UITableViewDataSource, UITableView
         self.makeSampleQuote()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayOfCompletedQuotes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "quoteCell", for: indexPath) as! QuoteViewCell
-            //QuoteViewCell(style: .default, reuseIdentifier: "quoteCell")
-//
         let selectedQuote = arrayOfCompletedQuotes[indexPath.row]
         cell.completedQuote = selectedQuote
         return cell
@@ -47,5 +40,17 @@ class MasterViewController: UIViewController, UITableViewDataSource, UITableView
         sampleQuote.quote.quoteAuthor = "mr. T"
         arrayOfCompletedQuotes.append(sampleQuote)
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "goToQuoteBuilder", sender: self)
+        //make new builderVC, set completedQuote property
+    }
+
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "goToQuoteBuilder", sender: sender)
+        //make new builderVC, don't set completedQuote property
+    }
+    
+    
 }
 

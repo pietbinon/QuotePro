@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,7 +34,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="112"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="exb-6t-huh">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="exb-6t-huh">
                                                     <rect key="frame" x="8" y="10" width="334" height="92"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -77,14 +78,18 @@
                     <navigationItem key="navigationItem" id="TsL-0v-dJ1">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hLf-rp-jzB">
                             <connections>
-                                <segue destination="KOo-yX-3of" kind="show" id="prD-WU-fIx"/>
+                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="umz-Zn-uOl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="plusButtonPressed" destination="hLf-rp-jzB" id="gPp-mr-69f"/>
+                        <segue destination="KOo-yX-3of" kind="show" identifier="goToQuoteBuilder" id="3s5-OC-gvW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056.8" y="112.89355322338831"/>
+            <point key="canvasLocation" x="1046" y="113"/>
         </scene>
         <!--Quote Builder View Controller-->
         <scene sceneID="feC-SB-E1e">
@@ -104,6 +109,9 @@
                                     <constraint firstAttribute="height" constant="58" id="BWJ-zm-BbN"/>
                                 </constraints>
                                 <state key="normal" title="New Quote"/>
+                                <connections>
+                                    <action selector="newQuoteButtonPressed:" destination="KOo-yX-3of" eventType="touchUpInside" id="Hc2-oo-sK4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARa-Vp-WWo">
                                 <rect key="frame" x="198" y="427" width="161" height="57"/>
@@ -112,6 +120,9 @@
                                     <constraint firstAttribute="height" constant="57" id="dml-pe-w1Y"/>
                                 </constraints>
                                 <state key="normal" title="New Photo"/>
+                                <connections>
+                                    <action selector="newPhotoButtonPressed:" destination="KOo-yX-3of" eventType="touchUpInside" id="j1g-8i-Rc2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRM-gz-2QK">
                                 <rect key="frame" x="139" y="609" width="97" height="38"/>
@@ -120,11 +131,16 @@
                                     <constraint firstAttribute="width" constant="97" id="aP9-4m-r8p"/>
                                 </constraints>
                                 <state key="normal" title="Publish"/>
+                                <connections>
+                                    <action selector="publishButtonPressed:" destination="KOo-yX-3of" eventType="touchUpInside" id="ZFv-qX-mgc"/>
+                                </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y28-Ca-Isr">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y28-Ca-Isr">
                                 <rect key="frame" x="16" y="72" width="343" height="343"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Y28-Ca-Isr" secondAttribute="height" multiplier="1:1" id="7Vj-wW-GKs"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abB-bF-hQG">
                                 <rect key="frame" x="139" y="499" width="97" height="39"/>
@@ -133,21 +149,31 @@
                                     <constraint firstAttribute="width" constant="97" id="DLd-He-ijb"/>
                                 </constraints>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="KOo-yX-3of" eventType="touchUpInside" id="52H-4J-bzh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Y28-Ca-Isr" firstAttribute="leading" secondItem="CeN-0U-xyf" secondAttribute="leadingMargin" id="4ch-VL-3Ec"/>
                             <constraint firstItem="48R-ms-jZV" firstAttribute="width" secondItem="ARa-Vp-WWo" secondAttribute="width" id="4tF-8u-llN"/>
+                            <constraint firstItem="Y28-Ca-Isr" firstAttribute="top" secondItem="8KR-M3-FYk" secondAttribute="bottom" constant="8" id="5gH-VX-wx0"/>
                             <constraint firstItem="abB-bF-hQG" firstAttribute="centerX" secondItem="CeN-0U-xyf" secondAttribute="centerX" id="LHW-RH-laR"/>
                             <constraint firstItem="PRM-gz-2QK" firstAttribute="centerX" secondItem="CeN-0U-xyf" secondAttribute="centerX" id="P59-Oo-IG7"/>
                             <constraint firstItem="nFz-AZ-kv0" firstAttribute="top" secondItem="PRM-gz-2QK" secondAttribute="bottom" constant="20" id="U95-7d-YRY"/>
+                            <constraint firstItem="Y28-Ca-Isr" firstAttribute="trailing" secondItem="CeN-0U-xyf" secondAttribute="trailingMargin" id="UPJ-oW-KmX"/>
                             <constraint firstItem="48R-ms-jZV" firstAttribute="leading" secondItem="CeN-0U-xyf" secondAttribute="leadingMargin" id="fmh-UJ-b3A"/>
                             <constraint firstItem="PRM-gz-2QK" firstAttribute="top" secondItem="abB-bF-hQG" secondAttribute="bottom" constant="71" id="m6H-uE-f4S"/>
                             <constraint firstItem="abB-bF-hQG" firstAttribute="top" secondItem="48R-ms-jZV" secondAttribute="bottom" constant="15" id="nsK-fw-hd6"/>
                             <constraint firstItem="abB-bF-hQG" firstAttribute="top" secondItem="ARa-Vp-WWo" secondAttribute="bottom" constant="15" id="pNz-A3-FDM"/>
                             <constraint firstItem="ARa-Vp-WWo" firstAttribute="trailing" secondItem="CeN-0U-xyf" secondAttribute="trailingMargin" id="uCC-oG-NBM"/>
+                            <constraint firstItem="48R-ms-jZV" firstAttribute="top" secondItem="Y28-Ca-Isr" secondAttribute="bottom" constant="11" id="ubN-v2-DhM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="quoteViewContainer" destination="Y28-Ca-Isr" id="jIq-K1-Pck"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5H-60-bzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
