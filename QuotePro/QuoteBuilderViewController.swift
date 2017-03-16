@@ -71,7 +71,15 @@ class QuoteBuilderViewController: UIViewController {
     }
     
     @IBAction func publishButtonPressed(_ sender: UIButton) {
-        //publish to social mediaz
+        
+        UIGraphicsBeginImageContextWithOptions(quoteView.bounds.size, true, 0)
+        quoteView.drawHierarchy(in: quoteView.bounds, afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        let objectsToShare = [image]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        self.present(activityVC, animated: true, completion: nil)
     }
     
     
