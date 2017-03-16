@@ -13,8 +13,4 @@ class Photo: NSObject {
 
     var photo: UIImage?
     
-//    init(photo:UIImage){
-//        self.photo = photo
-//    }
-    
 }

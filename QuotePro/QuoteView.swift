@@ -17,8 +17,12 @@ class QuoteView: UIView {
     func setupWithQuote(completedQuote:CompletedQuote) -> Void {
         
         photoView.image = completedQuote.photo.photo
+        
         quoteLabel.text = completedQuote.quote.quoteText
+        quoteLabel.shadowColor = UIColor.lightGray
+        
         authorLabel.text = completedQuote.quote.quoteAuthor
+        authorLabel.shadowColor = UIColor.lightGray
         
     }
 

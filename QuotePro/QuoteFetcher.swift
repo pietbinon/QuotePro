@@ -13,7 +13,7 @@ class QuoteFetcher
     func fetchQuote(completionHandler: @escaping (Quote) -> Void)
     {
         
-        let url = URL(string: "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json")
+        let url = URL(string: "http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en")
         let session = URLSession(configuration:URLSessionConfiguration.default)
         let dataTask = session.dataTask(with: url!, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
             
@@ -28,7 +28,6 @@ class QuoteFetcher
                     print("Not a 200 response")
                     return
             }
-            
             
             var jsonObject:[String: String]?
             

@@ -31,10 +31,10 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="113"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J5C-Cm-Oiu" id="PrF-K4-0SO">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="112"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="112.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="exb-6t-huh">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="exb-6t-huh">
                                                     <rect key="frame" x="8" y="10" width="334" height="92"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -83,6 +83,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="vdc-95-7dO" id="Y4Y-ha-6Qd"/>
                         <segue destination="KOo-yX-3of" kind="show" identifier="goToQuoteBuilder" id="3s5-OC-gvW"/>
                     </connections>
                 </viewController>

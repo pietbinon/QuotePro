@@ -22,8 +22,10 @@ class QuoteViewCell: UITableViewCell {
     
     fileprivate func configure() {
         
-        self.quoteImageView.image = completedQuote.photo.photo
-        self.quoteLabel.text = String(format: "%@", completedQuote.quote.quoteText!)
-        self.authorLabel.text = String(format: "-%@",completedQuote.quote.quoteAuthor!)
+        quoteImageView.image = completedQuote.photo.photo
+        quoteLabel.text = String(format: "%@", completedQuote.quote.quoteText!)
+        quoteLabel.shadowColor = UIColor.lightGray
+        authorLabel.text = String(format: "-%@",completedQuote.quote.quoteAuthor!)
+        authorLabel.shadowColor = UIColor.lightGray
     }
 }
