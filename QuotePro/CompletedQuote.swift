@@ -10,4 +10,6 @@ import UIKit
 
 class CompletedQuote: NSObject {
 
+    var quote = Quote()
+    var photo = Photo()
 }

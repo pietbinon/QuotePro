@@ -10,7 +10,7 @@ import Foundation
 
 struct QuoteService
 {
-    func generateQuote(completionHandler: @escaping (String, String) -> Void)
+    func fetchQuote(completionHandler: @escaping (String, String) -> Void)
     {
         
         let url = URL(string: "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json")

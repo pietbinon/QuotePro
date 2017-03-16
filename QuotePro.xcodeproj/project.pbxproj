@@ -20,6 +20,8 @@
 		3FF235FF1E79D4AC00747ABD /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF235FE1E79D4AC00747ABD /* QuoteView.swift */; };
 		3FF236021E79D57E00747ABD /* QuoteBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF236011E79D57E00747ABD /* QuoteBuilderViewController.swift */; };
 		3FF236041E79D8D100747ABD /* QuoteFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF236031E79D8D100747ABD /* QuoteFetcher.swift */; };
+		3FF236061E79E11100747ABD /* QuoteViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF236051E79E11100747ABD /* QuoteViewCell.swift */; };
+		3FF236081E79E13A00747ABD /* PhotoFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF236071E79E13A00747ABD /* PhotoFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		3FF235FE1E79D4AC00747ABD /* QuoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		3FF236011E79D57E00747ABD /* QuoteBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteBuilderViewController.swift; sourceTree = "<group>"; };
 		3FF236031E79D8D100747ABD /* QuoteFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteFetcher.swift; sourceTree = "<group>"; };
+		3FF236051E79E11100747ABD /* QuoteViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteViewCell.swift; sourceTree = "<group>"; };
+		3FF236071E79E13A00747ABD /* PhotoFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				3FF235FE1E79D4AC00747ABD /* QuoteView.swift */,
+				3FF236051E79E11100747ABD /* QuoteViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 				3FF235F81E79D39C00747ABD /* Photo.swift */,
 				3FF235FA1E79D3A500747ABD /* CompletedQuote.swift */,
 				3FF236031E79D8D100747ABD /* QuoteFetcher.swift */,
+				3FF236071E79E13A00747ABD /* PhotoFetcher.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -208,6 +214,8 @@
 				3FF236041E79D8D100747ABD /* QuoteFetcher.swift in Sources */,
 				3FF235FF1E79D4AC00747ABD /* QuoteView.swift in Sources */,
 				3FF235E61E79D05000747ABD /* QuotePro.xcdatamodeld in Sources */,
+				3FF236061E79E11100747ABD /* QuoteViewCell.swift in Sources */,
+				3FF236081E79E13A00747ABD /* PhotoFetcher.swift in Sources */,
 				3FF236021E79D57E00747ABD /* QuoteBuilderViewController.swift in Sources */,
 				3FF235F91E79D39C00747ABD /* Photo.swift in Sources */,
 			);
