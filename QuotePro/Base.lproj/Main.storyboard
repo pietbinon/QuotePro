@@ -83,7 +83,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="plusButtonPressed" destination="hLf-rp-jzB" id="gPp-mr-69f"/>
                         <segue destination="KOo-yX-3of" kind="show" identifier="goToQuoteBuilder" id="3s5-OC-gvW"/>
                     </connections>
                 </viewController>

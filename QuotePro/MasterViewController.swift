@@ -11,6 +11,7 @@ import UIKit
 class MasterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var arrayOfCompletedQuotes : [CompletedQuote] = []
+    var completedQuoteToShow: CompletedQuote?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,15 +43,23 @@ class MasterViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.completedQuoteToShow = self.arrayOfCompletedQuotes[indexPath.row]
         self.performSegue(withIdentifier: "goToQuoteBuilder", sender: self)
-        //make new builderVC, set completedQuote property
     }
 
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "goToQuoteBuilder", sender: sender)
-        //make new builderVC, don't set completedQuote property
+        //don't set completedQuote property
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var builderVC = QuoteBuilderViewController()
+        builderVC = segue.destination as! QuoteBuilderViewController
+        if sender is UIBarButtonItem {
+            builderVC.completedQuote = nil
+        } else {
+            builderVC.completedQuote = self.completedQuoteToShow
+        }
+    }
 }
 

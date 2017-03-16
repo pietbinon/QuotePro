@@ -14,7 +14,7 @@ class PhotoFetcher
 {
     func fetchPhoto(completionHandler: @escaping (Photo) -> Void) {
         
-        let url = URL(string: "http://lorempixel.com/300/300")
+        let url = URL(string: "https://lorempixel.com/300/300")
         let request = URLRequest(url: url!)
         let session = URLSession(configuration:URLSessionConfiguration.default)
         

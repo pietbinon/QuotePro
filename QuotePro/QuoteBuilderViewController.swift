@@ -10,54 +10,55 @@
 import UIKit
 
 class QuoteBuilderViewController: UIViewController {
-
+    
     
     @IBOutlet fileprivate weak var quoteViewContainer: UIView!
     
-    var quoteView: QuoteView?
+    var quoteView: QuoteView!
     var completedQuote: CompletedQuote?
-    var modifyingOriginalQuote: Bool?
+//    var modifyingOriginalQuote: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //load QuoteView.xib
         quoteView = Bundle.main.loadNibNamed("QuoteView",
                                              owner: nil,
                                              options: nil)?.first! as? QuoteView
-        
         quoteView?.frame.size = quoteViewContainer.frame.size
         quoteViewContainer.addSubview(quoteView!)
         
-        //check if completedQuote property exists,
-        //      if yes {
-        //              load previous thing
-        //              modifyingOriginalQuote = true;
-        //              prepareView
-        //      if no {
-        //              start downloading
-    }
-
-    fileprivate func prepareView() {
+        if (self.completedQuote != nil) {
+            //modifyingOriginalQuote = true;
+            prepareView()
+            
+        } else {
+            //START ZE DOWNLOAD
+        }
         
+    }
+    
+    fileprivate func prepareView() {
+        DispatchQueue.main.async {
+            self.quoteView.setupWithQuote(completedQuote: self.completedQuote!)
+        }
     }
     
     @IBAction func newQuoteButtonPressed(_ sender: UIButton) {
         let quoteGopher = QuoteFetcher()
         quoteGopher.fetchQuote{(quote:Quote) in
             
-            DispatchQueue.main.async {
-                self.completedQuote?.quote = quote
-            }
+            self.completedQuote?.quote = quote
+            self.prepareView()
         }
     }
     
     @IBAction func newPhotoButtonPressed(_ sender: UIButton) {
         let photoGopher = PhotoFetcher()
         photoGopher.fetchPhoto{(photo:Photo) in
-            
-            DispatchQueue.main.async {
-                self.completedQuote?.photo = photo
-            }
+    
+            self.completedQuote?.photo = photo
+            self.prepareView()
         }
     }
     
@@ -72,13 +73,13 @@ class QuoteBuilderViewController: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

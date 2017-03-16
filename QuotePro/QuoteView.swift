@@ -10,12 +10,16 @@ import UIKit
 
 class QuoteView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var quoteLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    
+    func setupWithQuote(completedQuote:CompletedQuote) -> Void {
+        
+        photoView.image = completedQuote.photo.photo
+        quoteLabel.text = completedQuote.quote.quoteText
+        authorLabel.text = completedQuote.quote.quoteAuthor
+        
     }
-    */
 
 }
