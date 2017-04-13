@@ -2,24 +2,25 @@
 //  QuoteFetcher.swift
 //  QuotePro
 //
-//  Created by Callum Davies on 2017-03-15.
-//  Copyright © 2017 Callum Davies. All rights reserved.
+//  Created by Pierre Binon on 2017-04-11.
+//  Copyright © 2017 Pierre Binon. All rights reserved.
 //
 
 import Foundation
 
-class QuoteFetcher
-{
-    func fetchQuote(completionHandler: @escaping (Quote) -> Void)
-    {
+
+
+class QuoteFetcher {
+    
+    func fetchQuote(completionHandler: @escaping (Quote) -> Void) {
         
         let url = URL(string: "http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en")
         let session = URLSession(configuration:URLSessionConfiguration.default)
         let dataTask = session.dataTask(with: url!, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
             
-            guard let data = data else
-            {
-                print("No data, \(error?.localizedDescription)")
+            guard let data = data else {
+                
+                print("No data, \(String(describing: error?.localizedDescription))")
                 return
             }
             
@@ -46,6 +47,7 @@ class QuoteFetcher
             completionHandler(newQuote)
             
         })
+        
         dataTask.resume()
     }
 }

@@ -2,27 +2,27 @@
 //  PhotoFetcher.swift
 //  QuotePro
 //
-//  Created by Callum Davies on 2017-03-15.
-//  Copyright © 2017 Callum Davies. All rights reserved.
+//  Created by Pierre Binon on 2017-04-11.
+//  Copyright © 2017 Pierre Binon. All rights reserved.
 //
 
 import Foundation
 import UIKit
-//import Nuke?
 
-class PhotoFetcher
-{
+
+class PhotoFetcher {
+    
     func fetchPhoto(completionHandler: @escaping (Photo) -> Void) {
         
-        let url = URL(string: "http://lorempixel.com/300/300")
+        let url = URL(string: "http://lorempixel.com/200/300/nature")
         let request = URLRequest(url: url!)
         let session = URLSession(configuration:URLSessionConfiguration.default)
         
         let dataTask = session.dataTask(with: request) { (data:Data?, response:URLResponse?, error:Error?) in
             
-            guard let data = data else
-            {
-                print("no data returned from \(error?.localizedDescription)")
+            guard let data = data else {
+                
+                print("no data returned from \(String(describing: error?.localizedDescription))")
                 return
             }
             
@@ -37,8 +37,8 @@ class PhotoFetcher
             
             completionHandler(newPhoto)
         }
+        
         dataTask.resume()
-    }
-    
+    }    
 }
 

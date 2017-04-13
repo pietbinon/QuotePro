@@ -3,18 +3,21 @@
 //  QuoteBuilderViewController.swift
 //  QuotePro
 //
-//  Created by Callum Davies on 2017-03-15.
-//  Copyright © 2017 Callum Davies. All rights reserved.
+//  Created by Pierre Binon on 2017-04-11.
+//  Copyright © 2017 Pierre Binon. All rights reserved.
 //
 
 import UIKit
 
+
 protocol QuoteBuilderDelegate {
+    
     func saveQuote(quoteToBeSaved: CompletedQuote)
 }
 
+
+
 class QuoteBuilderViewController: UIViewController {
-    
     
     @IBOutlet fileprivate weak var quoteViewContainer: UIView!
     
@@ -23,6 +26,7 @@ class QuoteBuilderViewController: UIViewController {
     var completedQuote: CompletedQuote?
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         
@@ -38,16 +42,20 @@ class QuoteBuilderViewController: UIViewController {
         }
     }
     
+    
     fileprivate func prepareView() {
         
         if ((completedQuote?.quote != nil) && (completedQuote?.photo != nil)) {
             DispatchQueue.main.async {
+                
                 self.quoteView.setupWithQuote(completedQuote: self.completedQuote!)
             }
         }
     }
     
+    
     @IBAction func newQuoteButtonPressed(_ sender: UIButton) {
+        
         let quoteGopher = QuoteFetcher()
         quoteGopher.fetchQuote{(quote:Quote) in
             
@@ -56,7 +64,9 @@ class QuoteBuilderViewController: UIViewController {
         }
     }
     
+    
     @IBAction func newPhotoButtonPressed(_ sender: UIButton) {
+        
         let photoGopher = PhotoFetcher()
         photoGopher.fetchPhoto{(photo:Photo) in
             
@@ -65,10 +75,13 @@ class QuoteBuilderViewController: UIViewController {
         }
     }
     
+    
     @IBAction func saveButtonPressed(_ sender: UIButton) {
+        
         delegate.saveQuote(quoteToBeSaved: self.completedQuote!)
         navigationController!.popViewController(animated: true)
     }
+    
     
     @IBAction func publishButtonPressed(_ sender: UIButton) {
         
@@ -81,7 +94,4 @@ class QuoteBuilderViewController: UIViewController {
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         self.present(activityVC, animated: true, completion: nil)
     }
-    
-    
-    
 }

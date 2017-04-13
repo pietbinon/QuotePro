@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="deZ-Ro-j7M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="deZ-Ro-j7M">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -104,71 +103,67 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48R-ms-jZV">
-                                <rect key="frame" x="16" y="426" width="161" height="58"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="58" id="BWJ-zm-BbN"/>
-                                </constraints>
-                                <state key="normal" title="New Quote"/>
+                                <rect key="frame" x="16" y="465" width="70" height="70"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" backgroundImage="Shape Copy"/>
                                 <connections>
                                     <action selector="newQuoteButtonPressed:" destination="KOo-yX-3of" eventType="touchUpInside" id="Hc2-oo-sK4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARa-Vp-WWo">
-                                <rect key="frame" x="198" y="427" width="161" height="57"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y28-Ca-Isr">
+                                <rect key="frame" x="16" y="64" width="343" height="389"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abB-bF-hQG">
+                                <rect key="frame" x="152" y="465" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="161" id="arw-Oz-e73"/>
-                                    <constraint firstAttribute="height" constant="57" id="dml-pe-w1Y"/>
+                                    <constraint firstAttribute="width" constant="70" id="2en-5Q-Vcd"/>
+                                    <constraint firstAttribute="height" constant="70" id="xa4-xU-t6J"/>
                                 </constraints>
-                                <state key="normal" title="New Photo"/>
+                                <state key="normal" backgroundImage="Save"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="KOo-yX-3of" eventType="touchUpInside" id="52H-4J-bzh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARa-Vp-WWo">
+                                <rect key="frame" x="289" y="465" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="AUz-gn-VZj"/>
+                                    <constraint firstAttribute="height" constant="70" id="cbq-bm-tQd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" backgroundImage="Shape"/>
                                 <connections>
                                     <action selector="newPhotoButtonPressed:" destination="KOo-yX-3of" eventType="touchUpInside" id="j1g-8i-Rc2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRM-gz-2QK">
-                                <rect key="frame" x="139" y="609" width="97" height="38"/>
+                                <rect key="frame" x="152" y="577" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="1oY-mF-0NY"/>
-                                    <constraint firstAttribute="width" constant="97" id="aP9-4m-r8p"/>
+                                    <constraint firstAttribute="width" constant="70" id="3Ho-kD-AKU"/>
+                                    <constraint firstAttribute="height" constant="70" id="GCt-9o-P13"/>
                                 </constraints>
-                                <state key="normal" title="Publish"/>
+                                <state key="normal" backgroundImage="Publish"/>
                                 <connections>
                                     <action selector="publishButtonPressed:" destination="KOo-yX-3of" eventType="touchUpInside" id="ZFv-qX-mgc"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y28-Ca-Isr">
-                                <rect key="frame" x="16" y="72" width="343" height="343"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Y28-Ca-Isr" secondAttribute="height" multiplier="1:1" id="7Vj-wW-GKs"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abB-bF-hQG">
-                                <rect key="frame" x="139" y="499" width="97" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="39" id="8b7-FY-cee"/>
-                                    <constraint firstAttribute="width" constant="97" id="DLd-He-ijb"/>
-                                </constraints>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveButtonPressed:" destination="KOo-yX-3of" eventType="touchUpInside" id="52H-4J-bzh"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Y28-Ca-Isr" firstAttribute="leading" secondItem="CeN-0U-xyf" secondAttribute="leadingMargin" id="4ch-VL-3Ec"/>
-                            <constraint firstItem="48R-ms-jZV" firstAttribute="width" secondItem="ARa-Vp-WWo" secondAttribute="width" id="4tF-8u-llN"/>
-                            <constraint firstItem="Y28-Ca-Isr" firstAttribute="top" secondItem="8KR-M3-FYk" secondAttribute="bottom" constant="8" id="5gH-VX-wx0"/>
-                            <constraint firstItem="abB-bF-hQG" firstAttribute="centerX" secondItem="CeN-0U-xyf" secondAttribute="centerX" id="LHW-RH-laR"/>
-                            <constraint firstItem="PRM-gz-2QK" firstAttribute="centerX" secondItem="CeN-0U-xyf" secondAttribute="centerX" id="P59-Oo-IG7"/>
-                            <constraint firstItem="nFz-AZ-kv0" firstAttribute="top" secondItem="PRM-gz-2QK" secondAttribute="bottom" constant="20" id="U95-7d-YRY"/>
-                            <constraint firstItem="Y28-Ca-Isr" firstAttribute="trailing" secondItem="CeN-0U-xyf" secondAttribute="trailingMargin" id="UPJ-oW-KmX"/>
-                            <constraint firstItem="48R-ms-jZV" firstAttribute="leading" secondItem="CeN-0U-xyf" secondAttribute="leadingMargin" id="fmh-UJ-b3A"/>
-                            <constraint firstItem="PRM-gz-2QK" firstAttribute="top" secondItem="abB-bF-hQG" secondAttribute="bottom" constant="71" id="m6H-uE-f4S"/>
-                            <constraint firstItem="abB-bF-hQG" firstAttribute="top" secondItem="48R-ms-jZV" secondAttribute="bottom" constant="15" id="nsK-fw-hd6"/>
-                            <constraint firstItem="abB-bF-hQG" firstAttribute="top" secondItem="ARa-Vp-WWo" secondAttribute="bottom" constant="15" id="pNz-A3-FDM"/>
-                            <constraint firstItem="ARa-Vp-WWo" firstAttribute="trailing" secondItem="CeN-0U-xyf" secondAttribute="trailingMargin" id="uCC-oG-NBM"/>
-                            <constraint firstItem="48R-ms-jZV" firstAttribute="top" secondItem="Y28-Ca-Isr" secondAttribute="bottom" constant="11" id="ubN-v2-DhM"/>
+                            <constraint firstItem="48R-ms-jZV" firstAttribute="leading" secondItem="CeN-0U-xyf" secondAttribute="leadingMargin" id="3MP-6I-ELA"/>
+                            <constraint firstItem="PRM-gz-2QK" firstAttribute="top" secondItem="abB-bF-hQG" secondAttribute="bottom" constant="42" id="6ud-Ab-ubN"/>
+                            <constraint firstItem="abB-bF-hQG" firstAttribute="top" secondItem="Y28-Ca-Isr" secondAttribute="bottom" constant="12" id="7HN-dY-JU4"/>
+                            <constraint firstItem="ARa-Vp-WWo" firstAttribute="trailing" secondItem="CeN-0U-xyf" secondAttribute="trailingMargin" id="AGV-Hj-KyC"/>
+                            <constraint firstItem="Y28-Ca-Isr" firstAttribute="leading" secondItem="CeN-0U-xyf" secondAttribute="leadingMargin" id="KCR-sj-zyH"/>
+                            <constraint firstItem="Y28-Ca-Isr" firstAttribute="trailing" secondItem="CeN-0U-xyf" secondAttribute="trailingMargin" id="Wom-M0-IZF"/>
+                            <constraint firstItem="Y28-Ca-Isr" firstAttribute="centerX" secondItem="abB-bF-hQG" secondAttribute="centerX" id="XS1-YG-MXJ"/>
+                            <constraint firstItem="48R-ms-jZV" firstAttribute="top" secondItem="Y28-Ca-Isr" secondAttribute="bottom" constant="12" id="bhY-I2-9va"/>
+                            <constraint firstItem="Y28-Ca-Isr" firstAttribute="top" secondItem="8KR-M3-FYk" secondAttribute="bottom" id="cun-3A-sg0"/>
+                            <constraint firstItem="ARa-Vp-WWo" firstAttribute="top" secondItem="Y28-Ca-Isr" secondAttribute="bottom" constant="12" id="dtS-EA-J8e"/>
+                            <constraint firstItem="Y28-Ca-Isr" firstAttribute="centerX" secondItem="PRM-gz-2QK" secondAttribute="centerX" id="i8V-zJ-hFA"/>
+                            <constraint firstAttribute="bottom" secondItem="Y28-Ca-Isr" secondAttribute="bottom" constant="214" id="mHO-td-mMH"/>
+                            <constraint firstItem="Y28-Ca-Isr" firstAttribute="leading" secondItem="48R-ms-jZV" secondAttribute="leading" id="u9q-Ow-dZd"/>
                         </constraints>
                     </view>
                     <connections>
@@ -177,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5H-60-bzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1907.5" y="112.5"/>
+            <point key="canvasLocation" x="1906.4000000000001" y="111.99400299850076"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uGc-Jf-D8W">
@@ -198,4 +193,10 @@
             <point key="canvasLocation" x="117.59999999999999" y="112.89355322338831"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Publish" width="70" height="70"/>
+        <image name="Save" width="78" height="78"/>
+        <image name="Shape" width="60" height="49"/>
+        <image name="Shape Copy" width="70" height="70"/>
+    </resources>
 </document>
