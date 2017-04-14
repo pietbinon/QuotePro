@@ -23,51 +23,6 @@ class MasterViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         
         self.makeSampleQuote()
-        
-        
-        
-//===============================================================================================================
-//THIS PART TO WORK WITH THE .XIB FILE
-//        
-//        var data : [Photo] = [] {
-//            
-//            //Override the setter in Obj-c
-//            didSet {
-//                
-//                //update the tavleView
-//            }
-//        }
-//        
-//        let theView = Bundle.main.loadNibNamed("TheView", owner: nil, options: nil)?.first as! TheView
-//        view = theView
-//        
-//        NotificationCenter.default.addObserver(self, selector: #selector(receivedNotification(notif:)), name (rawValue: "PhotoObjectCreatedNotification"), object: nil)
-//        
-//        
-//        func  receivedNotification (notif: Notification) {
-//            
-//            let photo = notif.userInfo?["key"]
-//        
-//        if let photo = notif.userInfo?["key"] as? Photo {
-//            
-//        data.append(photo)
-//        }
-//            
-//        guard let image = snapshot() else {
-//            
-//            return
-//        }
-//
-//        
-//        private func snapshot() -> UIImage? {
-//            
-//            UIGraphicsBeginImageContextWithOptions(view.bounds.size, true, 0)
-//            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-//            let image = UIGraphicsGetImageFromCurrentImageContext()
-//            UIGraphicsEndImageContext()
-//            return image
-//        }
-//==================================================================================================================
     }
     
     
@@ -89,6 +44,8 @@ class MasterViewController: UIViewController, UITableViewDataSource, UITableView
         arrayOfCompletedQuotes.append(sampleQuote)
     }
     
+    
+ 
     
     
     //MARK: TableView
@@ -130,6 +87,8 @@ class MasterViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
 
+
+    
     
     //MARK: Segue
     
@@ -153,9 +112,10 @@ class MasterViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+
+    
     
     //MARK: Other
-    
     
     func saveQuote(quoteToBeSaved: CompletedQuote) {
         
