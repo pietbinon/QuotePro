@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -88,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046" y="113"/>
+            <point key="canvasLocation" x="874" y="113"/>
         </scene>
         <!--Quote Builder View Controller-->
         <scene sceneID="feC-SB-E1e">
@@ -161,6 +162,7 @@
                             <constraint firstItem="48R-ms-jZV" firstAttribute="top" secondItem="Y28-Ca-Isr" secondAttribute="bottom" constant="12" id="bhY-I2-9va"/>
                             <constraint firstItem="Y28-Ca-Isr" firstAttribute="top" secondItem="8KR-M3-FYk" secondAttribute="bottom" id="cun-3A-sg0"/>
                             <constraint firstItem="ARa-Vp-WWo" firstAttribute="top" secondItem="Y28-Ca-Isr" secondAttribute="bottom" constant="12" id="dtS-EA-J8e"/>
+                            <constraint firstItem="Y28-Ca-Isr" firstAttribute="width" secondItem="CeN-0U-xyf" secondAttribute="height" multiplier="343:667" id="g5e-YP-t3a"/>
                             <constraint firstItem="Y28-Ca-Isr" firstAttribute="centerX" secondItem="PRM-gz-2QK" secondAttribute="centerX" id="i8V-zJ-hFA"/>
                             <constraint firstAttribute="bottom" secondItem="Y28-Ca-Isr" secondAttribute="bottom" constant="214" id="mHO-td-mMH"/>
                             <constraint firstItem="Y28-Ca-Isr" firstAttribute="leading" secondItem="48R-ms-jZV" secondAttribute="leading" id="u9q-Ow-dZd"/>
@@ -172,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D5H-60-bzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1906.4000000000001" y="111.99400299850076"/>
+            <point key="canvasLocation" x="1618" y="113"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uGc-Jf-D8W">

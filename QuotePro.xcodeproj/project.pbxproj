@@ -86,10 +86,6 @@
 				3FF235F41E79D17200747ABD /* Views */,
 				3FF235F31E79D16600747ABD /* Controllers */,
 				3FF236001E79D53900747ABD /* Supporting Files */,
-				771CEB7E1E9E638F00139E69 /* TheView.xib */,
-				771CEB801E9E649000139E69 /* RoundButton.swift */,
-				771CEB821E9E6B4D00139E69 /* Photos.swift */,
-				771CEB841E9E6C3500139E69 /* TheView.swift */,
 			);
 			path = QuotePro;
 			sourceTree = "<group>";
@@ -109,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				3FF235E11E79D05000747ABD /* Main.storyboard */,
-				3FF235E91E79D05000747ABD /* LaunchScreen.storyboard */,
 				3FF235FC1E79D40900747ABD /* QuoteView.xib */,
 			);
 			name = Views;
@@ -130,6 +125,11 @@
 		3FF236001E79D53900747ABD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3FF235E91E79D05000747ABD /* LaunchScreen.storyboard */,
+				771CEB7E1E9E638F00139E69 /* TheView.xib */,
+				771CEB801E9E649000139E69 /* RoundButton.swift */,
+				771CEB821E9E6B4D00139E69 /* Photos.swift */,
+				771CEB841E9E6C3500139E69 /* TheView.swift */,
 				3FF235DD1E79D05000747ABD /* AppDelegate.swift */,
 				3FF235E71E79D05000747ABD /* Assets.xcassets */,
 				3FF235EC1E79D05000747ABD /* Info.plist */,

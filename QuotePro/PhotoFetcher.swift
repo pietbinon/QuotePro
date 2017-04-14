@@ -6,8 +6,8 @@
 //  Copyright © 2017 Pierre Binon. All rights reserved.
 //
 
-import Foundation
 import UIKit
+
 
 
 class PhotoFetcher {

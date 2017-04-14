@@ -21,9 +21,9 @@ class QuoteView: UIView {
         photoView.image = completedQuote.photo.photo
         
         quoteLabel.text = completedQuote.quote.quoteText
-        quoteLabel.shadowColor = UIColor.lightGray
+        quoteLabel.shadowColor = UIColor.darkGray
         
         authorLabel.text = completedQuote.quote.quoteAuthor
-        authorLabel.shadowColor = UIColor.lightGray
+        authorLabel.shadowColor = UIColor.darkGray
     }
 }

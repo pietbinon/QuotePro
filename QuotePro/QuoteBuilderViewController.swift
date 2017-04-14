@@ -30,7 +30,7 @@ class QuoteBuilderViewController: UIViewController {
         super.viewDidLoad()
         
         
-        //load QuoteView.xib
+        //Load the QuoteView.xib here
         quoteView = Bundle.main.loadNibNamed("QuoteView",
                                              owner: nil,
                                              options: nil)?.first! as? QuoteView
@@ -91,7 +91,7 @@ class QuoteBuilderViewController: UIViewController {
         UIGraphicsEndImageContext()
         
         let objectsToShare = [image]
-        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        let activityVC = UIActivityViewController(activityItems: [objectsToShare as Any], applicationActivities: nil)
         self.present(activityVC, animated: true, completion: nil)
     }
 }

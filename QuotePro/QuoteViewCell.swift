@@ -29,8 +29,8 @@ class QuoteViewCell: UITableViewCell {
         
         quoteImageView.image = completedQuote.photo.photo
         quoteLabel.text = String(format: "%@", completedQuote.quote.quoteText!)
-        quoteLabel.shadowColor = UIColor.lightGray
+        quoteLabel.shadowColor = UIColor.darkGray
         authorLabel.text = String(format: "-%@",completedQuote.quote.quoteAuthor!)
-        authorLabel.shadowColor = UIColor.lightGray
+        authorLabel.shadowColor = UIColor.darkGray
     }
 }
